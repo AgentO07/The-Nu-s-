@@ -17,7 +17,7 @@ java -jar /home/ajafri/Desktop/cowj/app/build/libs/cowj-0.1-SNAPSHOT.jar ../apis
 ##########################################################################################
 ##########################################################################################
 
-# Make druid recieve ingestion specs every minute as a background process, VERY RUDIMENTARY without a cron job
+# Make druid receive ingestion specs every minute as a background process, VERY RUDIMENTARY without a cron job
 
 # send_ingestion_specs() {
 #   curl -X POST -H 'Content-Type: application/json' -d @./ingestion-spec.json http://localhost:8081/druid/indexer/v1/task
