@@ -1,0 +1,103 @@
+{
+  "type": "index_parallel",
+  "spec": {
+    "dataSchema": {
+      "dataSource": "sentence_emotion_data",
+      "timestampSpec": {
+        "column": "null",
+        "missingValue": "1970-01-01T00:00:00.000Z"
+      },
+      "dimensionsSpec": {
+        "dimensions": ["sentence", "keyword", "ternary_label"]
+      },
+      "metricsSpec": [
+        {"type": "doubleSum", "name": "ternary_score", "fieldName": "ternary_score"},
+        {"type": "doubleSum", "name": "joy", "fieldName": "emotion_joy"},
+        {"type": "doubleSum", "name": "surprise", "fieldName": "emotion_surprise"},
+        {"type": "doubleSum", "name": "sadness", "fieldName": "emotion_sadness"},
+        {"type": "doubleSum", "name": "disgust", "fieldName": "emotion_disgust"},
+        {"type": "doubleSum", "name": "anger", "fieldName": "emotion_anger"},
+        {"type": "doubleSum", "name": "fear", "fieldName": "emotion_fear"},
+        {"type": "doubleSum", "name": "neutral", "fieldName": "emotion_neutral"}
+      ]
+    },
+    "ioConfig": {
+      "type": "index_parallel",
+      "inputSource": {
+        "type": "local",
+        "baseDir": "/path/to/data/",
+        "filter": "*.se.json"
+      },
+      "inputFormat": {
+        "type": "json",
+        "flattenSpec": {
+          "useFieldDiscovery": false,
+          "fields": [
+            {
+              "type": "path",
+              "name": "sentence",
+              "expr": "$.sentences[*].sentence"
+            },
+            {
+              "type": "path",
+              "name": "keyword",
+              "expr": "$.sentences[*].keywords[*]"
+            },
+            {
+              "type": "path",
+              "name": "ternary_label",
+              "expr": "$.sentences[*].ternary.label"
+            },
+            {
+              "type": "path",
+              "name": "ternary_score",
+              "expr": "$.sentences[*].ternary.score"
+            },
+            {
+              "type": "path",
+              "name": "emotion.joy",
+              "expr": "$.sentences[*].emotion.joy"
+            },
+            {
+              "type": "path",
+              "name": "emotion.surprise",
+              "expr": "$.sentences[*].emotion.surprise"
+            },
+            {
+              "type": "path",
+              "name": "emotion.sadness",
+              "expr": "$.sentences[*].emotion.sadness"
+            },
+            {
+              "type": "path",
+              "name": "emotion.disgust",
+              "expr": "$.sentences[*].emotion.disgust"
+            },
+            {
+              "type": "path",
+              "name": "emotion.anger",
+              "expr": "$.sentences[*].emotion.anger"
+            },
+            {
+              "type": "path",
+              "name": "emotion.fear",
+              "expr": "$.sentences[*].emotion.fear"
+            },
+            {
+              "type": "path",
+              "name": "emotion.neutral",
+              "expr": "$.sentences[*].emotion.neutral"
+            }
+          ]
+        }
+      }
+    },
+    "tuningConfig": {
+      "type": "index_parallel",
+      "maxRowsPerSegment": 5000000
+    }
+  }
+}
+
+
+

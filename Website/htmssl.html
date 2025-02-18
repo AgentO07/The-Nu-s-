@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listenn.in</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>Listenn.in</h1>
+        </div>
+        <div class="header-button">
+            <a href="#contact-form" class="button">Book a demo</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Main Heading -->
+        <h2>Listen. Understand. Transform.</h2>
+        
+        <!-- Subtitle -->
+        <p>Revolutionize your customer feedback into strategic growth opportunities for your business</p>
+        
+        <!-- Buttons for action -->
+        <div class="hero-buttons">
+            <a href="#" class="button-light" id="Watch-Video">Watch Video</a>
+            <a href="#contact-form" class="button-dark">Book a demo</a>
+        </div>
+    
+        <!-- Embedded YouTube Video -->
+        <div class="video-container"  id="video-container">
+            <iframe id="my-video" width="560" height="315" src="https://www.youtube.com/embed/775D3kP6oRI"
+                    title="YouTube video player" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+            </iframe>
+        </div>
+
+        <!-- JavaScript to Autoplay the Video -->
+        <script>
+            document.getElementById("Watch-Video").addEventListener("click", function(e) {
+                e.preventDefault(); // Prevent default anchor behavior
+                // Scroll to video container
+                document.getElementById("video-container").scrollIntoView({ behavior: "smooth" });
+                
+                // Change the iframe src to autoplay the video
+                var video = document.getElementById("my-video");
+                var videoSrc = video.src;
+                
+                // Append autoplay parameter to the video URL if not already present
+                if (!videoSrc.includes("autoplay=1")) {
+                    video.src = videoSrc + "?autoplay=1";
+                }
+            });
+        </script>
+    </section>
+    
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature-item">
+            <img src="images/fluent_person-voice-20-regular.svg" alt="Voice Sentiment Analysis Icon">
+            <h3>Voice sentiment analysis</h3>
+            <p>Capture and analyze customer emotions to uncover the true meaning behind their feedback.</p>
+        </div>
+        <div class="feature-item">
+            <img src="images/hugeicons_market-analysis.svg" alt="Actionable Insights Icon">
+            <h3>Actionable insights</h3>
+            <p>Transform voice recordings into actionable insights by categorizing feedback.</p>
+        </div>
+        <div class="feature-item">
+            <img src="images/material-symbols-light_search-insights.svg" alt="Keyword Analysis Icon">
+            <h3>Keyword based analysis</h3>
+            <p>Automatically track and analyze the most frequently used words in feedback.</p>
+        </div>
+    </section>
+
+
+
+    <!-- Insights Section -->
+    <section class="insights">
+        <div class="insights-container">
+            <!-- Left side: Text content -->
+            <div class="insights-text">
+                <h2>Unlock Key Customer<br> Insights from Keyword<br>Analysis</h2>
+                <p>
+                    Capture key themes from customer feedback<br>
+                    with keyword analysis. Understand what<br>
+                    drives sentiment and make data-driven<br>
+                    decisions to enhance satisfaction and loyalty.
+                </p>
+                <a href="#contact-form" class="button-dark">Book a demo</a>
+            </div>
+    
+            <!-- Right side: Images -->
+            <div class="insights-images">
+                <img src="images/Image.svg" alt="Emotion analysis">
+            </div>
+        </div>
+    </section>
+    
+    <section class="how-it-works">
+        <!-- Heading section -->
+        <div class="heading">
+            <h2>How It Works: From Voice to Insight</h2>
+            <p>Transform spoken feedback into actionable insights with our simple process. Capture, analyze, and understand customer emotions and key themes to make data-driven decisions that matter.</p>
+        </div>
+
+        <!-- Content section -->
+        <div class="content-container">
+            <!-- Left side: Image -->
+            <div class="image-container">
+                <img src="images/img_record_a_podcast.png" alt="How it works illustration">
+            </div>
+
+            <!-- Right side: Steps -->
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Record Customer Feedback</h3>
+                        <p>Collect voice feedback effortlessly, allowing customers to share their thoughts in a natural, spoken format.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Analyze Key Words and Sentiments</h3>
+                        <p>Our system processes the voice data, identifying key words and analyzing sentiment to uncover valuable insights.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Generate actionable insights</h3>
+                        <p>Receive clear, actionable insights from the feedback, categorized by positive, neutral, or negative sentiment to guide your decisions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    
+    <!-- Contact Form Section    -->
+    <section class="contact" id="contact-form">
+        <!-- Left Side: Text -->
+        <div class="contact-text">
+            <div class="contact-icon">
+                <img src="images/icons8-chat-24.png" alt="Chat Icon"> <!-- Add icon here -->
+            </div>
+            <h2>For Smarter Feedback Solutions <br> Get In Touch</h2>
+        </div>
+    
+        <!-- Right Side: Form -->
+        <div class="contact-form">
+            <form>
+                
+                <label for="name">Name</label><br>
+                <input type="text" id="name" name="name" placeholder="John Doe">
+                
+                <label for="email">Email</label><br>
+                <input type="email" id="email" name="email" placeholder="john@email.com">
+                    
+                <label for="phone">Phone</label><br>
+                <input type="tel" id="phone" name="phone" placeholder="123-456-7890">
+                
+                <button type="submit" class="button-dark">Book a demo</button>
+                
+            </form>
+        </div>
+    </section>
+    
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <!-- Left: Logo/Title -->
+            <h1>Listenn.in</h1>
+    
+            <!-- Right: Links -->
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Support</a>
+            </div>
+        </div>
+    </footer>
+    
+    
+</body>
+</html>

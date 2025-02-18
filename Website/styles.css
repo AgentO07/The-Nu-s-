@@ -1,0 +1,539 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    padding-top: 80px; /* This creates space for the fixed header */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff; /* Ensure background is set */
+    position: fixed; /* Makes the header fixed at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width header */
+    z-index: 1000; /* Ensures the header is above other content */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Adds slight shadow for effect */
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.header-button .button {
+    background-color: #081830;
+    height: 48px;
+    color: #fff;
+    padding: 10px 24px;
+    text-decoration: none;
+    border-radius: 12px;
+    gap: 10px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.hero {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+/* Main Heading */
+.hero h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #0d1c2e;
+}
+
+/* Subtitle Text */
+.hero p {
+    font-size: 1.25rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Button Container */
+/* Button Container */
+.hero-buttons {
+    display: inline-flex;
+    gap: 10px; /* Space between buttons based on provided gap */
+}
+
+/* Common Button Styles */
+.hero-buttons a {
+    display: inline-block;
+    width: 240px; /* Fixed width */
+    height: 48px; /* Fixed height */
+    line-height: 48px; /* Vertically align text */
+    padding: 0 14px; /* Padding for internal spacing */
+    border-radius: 12px; /* Border radius */
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-align: center; /* Align text in the center horizontally */
+    box-sizing: border-box; /* Ensure padding doesn't affect size */
+}
+
+/* Light Button (Outlined) */
+.button-light {
+    background-color: #fff;
+    color: #081830;
+    border: 1px solid #081830; /* Border based on properties */
+}
+
+.button-light:hover {
+    background-color: #f2f2f2; /* Subtle hover effect */
+    color: #081830;
+}
+
+/* Dark Button (Filled) */
+.button-dark {
+    background-color: #081830;
+    color: #fff;
+    border: 1px solid #081830; /* Border based on properties */
+}
+
+.button-dark:hover {
+    background-color: #293a50;
+}
+
+
+.video-container {
+    position: relative;
+    padding-bottom: 50.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background-color: #000;
+    margin-top: 173px;
+    border-radius: 24px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .video-container iframe {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 60px 20px;
+}
+
+.feature-item {
+    max-width: 300px;
+    text-align: left; /* Changed from center to left */
+}
+
+.feature-item img {
+    width: auto;
+    height: auto;
+    top: 2.8px;
+    left: 5.6px;
+}
+.feature-item h3 {
+    font-size: 21px;
+    margin-bottom: 10px;
+    color: #081830;
+    text-align: left; /* Ensure the heading is aligned to the left */
+}
+
+.feature-item p {
+    font-size: 17px;
+    text-align: left; /* Ensure the paragraph is aligned to the left */
+}
+
+
+/* Section container */
+.insights {
+    padding: 60px 20px;
+    background-color: #f4f7fa;
+}
+
+/* Flexbox container for text and images */
+.insights-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Left side: Text content */
+.insights-text {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.insights h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #0d1c2e;
+    font-weight: bold;
+}
+
+.insights p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.button-dark {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #0d1c2e;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button-dark:hover {
+    background-color: #293a50;
+}
+
+/* Right side: Images */
+.insights-images {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Adjusts the space between images */
+}
+
+.insights-images img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .insights-container {
+        flex-direction: column;
+    }
+
+    .insights-text {
+        padding-right: 0;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .insights-images {
+        flex-direction: column;
+    }
+
+    .insights-images img {
+        max-width: 80%;
+    }
+}
+
+
+/* General styling for the section */
+/* Section styling */
+.how-it-works {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+/* Heading styles */
+.how-it-works .heading h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #081830;
+    margin-bottom: 10px;
+}
+
+.how-it-works .heading p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Content container: Image on the left, steps on the right */
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Left side: Image */
+.image-container {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Right side: Steps */
+/* Right side: Steps */
+.steps {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Ensures the steps are aligned to the left */
+    padding-left: 40px;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.step-number {
+    background-color: #f0f4f7;
+    color: #081830;
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.step-content {
+    text-align: left; /* Ensures all text within step content is aligned left */
+}
+
+.step-content h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #081830;
+    margin-bottom: 5px;
+    text-align: left !important; /* Ensures heading is aligned left */
+}
+
+.step-content p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    text-align: left !important; /* Ensures paragraph is aligned left */
+}
+
+
+/* Responsive styling for mobile */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-container {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .steps {
+        padding-left: 0;
+    }
+}
+
+/* Main contact section styling */
+.contact {
+    display: flex;
+    justify-content: space-between; /* Ensures text and form are well spaced */
+    align-items: center;
+    padding: 82px 68px;
+    background-color: #081830;
+    color: #fff;
+    flex-wrap: wrap; /* Ensures layout adjusts on smaller screens */
+}
+
+/* Left Side: Text and icon */
+.contact-text {
+    flex: 1;
+    text-align: left; /* Align text to left */
+    padding-right: 50px; /* Space between text and form */
+}
+
+.contact-text h2 {
+    font-size: 2rem;
+    line-height: 1.4;
+    max-width: 400px;
+}
+
+/* Contact icon */
+.contact-icon {
+    margin-bottom: 20px;
+}
+
+.contact-icon img {
+    width: 60px;
+    height: 60px;
+}
+
+/* Right Side: Form styling */
+/* Right Side: Form styling */
+.contact-form {
+    background-color: #ffffff;
+    padding: 48px;
+    border-radius: 24px;
+    color: #333;
+    height: auto; /* Remove fixed height for responsive layout */
+    max-width: 400px;   
+    flex: 1;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px; /* Even spacing between all form elements */
+}
+
+.contact-form label {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.contact-form input {
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.contact-form button {
+    background-color: #081830;
+    color: #fff;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 20px; /* Ensures space above the button */
+}
+
+.contact-form button:hover {
+    background-color: #293a50;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-text {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f7fa;
+}
+
+/* Footer Container */
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Moves the h1 to the left and links to the right */
+    align-items: center;
+    padding: 20px;
+    background-color: #f6f4f4;
+    color: #000000;
+}
+
+/* Left Side: H1 */
+.footer-container h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* Right Side: Footer Links */
+.footer-links {
+    display: flex;
+    gap: 20px; /* Spacing between links */
+}
+
+.footer-links a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+
+.hero img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.features img {
+    width: 100px;
+    margin-bottom: 10px;
+}
+.steps img {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+.how-it-works h3{
+    text-align: center;
+}

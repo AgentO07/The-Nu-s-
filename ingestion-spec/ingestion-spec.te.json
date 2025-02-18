@@ -1,0 +1,48 @@
+{
+  "type": "index_parallel",
+  "spec": {
+    "dataSchema": {
+      "dataSource": "overall_text_emotion_data",
+      "timestampSpec": {
+        "column": "timestamp",
+        "format": "auto"
+      },
+      "dimensionsSpec": {
+        "dimensions": ["file_id", "emotion_label"]
+      },
+      "metricsSpec": [
+        {"type": "doubleSum", "name": "emotion_score", "fieldName": "score"}
+      ]
+    },
+    "ioConfig": {
+      "type": "index_parallel",
+      "inputSource": {
+        "type": "local",
+        "baseDir": "/path/to/data/",
+        "filter": "*.te.json"
+      },
+      "inputFormat": {
+        "type": "json",
+        "flattenSpec": {
+          "useFieldDiscovery": true,
+          "fields": [
+            {
+              "type": "path",
+              "name": "emotion_label",
+              "expr": "$[*].label"
+            },
+            {
+              "type": "path",
+              "name": "emotion_score",
+              "expr": "$[*].score"
+            }
+          ]
+        }
+      }
+    },
+    "tuningConfig": {
+      "type": "index_parallel",
+      "maxRowsPerSegment": 5000000
+    }
+  }
+}
